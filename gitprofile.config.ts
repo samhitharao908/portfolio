@@ -1,229 +1,223 @@
 // gitprofile.config.ts
+// Paste this over the file in your forked repo, then commit to main.
 
 const CONFIG = {
   github: {
-    username: 'arifszn', // Your GitHub org/user name. (This is the only required config)
+    username: 'samhitharao908', // only required field
   },
+
   /**
-   * If you are deploying to https://<USERNAME>.github.io/, for example your repository is at https://github.com/arifszn/arifszn.github.io, set base to '/'.
-   * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
-   * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
+   * URL rules:
+   * - Repo named samhitharao908.github.io  →  base: '/'
+   *   Live site: https://samhitharao908.github.io/
+   * - Repo named portfolio                 →  base: '/portfolio/'
+   *   Live site: https://samhitharao908.github.io/portfolio/
    */
-  base: '/gitprofile/',
+  base: '/portfolio/',
+
   projects: {
     github: {
-      display: true, // Display GitHub projects?
-      header: 'Github Projects',
-      mode: 'automatic', // Mode can be: 'automatic' or 'manual'
+      display: true,
+      header: 'GitHub Projects',
+      mode: 'automatic', // switch to 'manual' once you pin specific repos
       automatic: {
-        sortBy: 'stars', // Sort projects by 'stars' or 'updated'
-        limit: 8, // How many projects to display.
+        sortBy: 'updated',
+        limit: 8,
         exclude: {
-          forks: false, // Forked projects will not be displayed if set to true.
-          projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
+          forks: true,
+          projects: [],
+          // later you can hide old coursework, e.g.:
+          // projects: ['samhitharao908/Data-visualisation-using-tableau'],
         },
       },
       manual: {
-        // Properties for manually specifying projects
-        projects: ['arifszn/gitprofile', 'arifszn/pandora'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [
+          // Fill these after the repos exist, then set mode: 'manual'
+          // 'samhitharao908/graph-rag-hybrid-retrieval',
+          // 'samhitharao908/mini-orchestrator',
+          // 'samhitharao908/gentute',
+        ],
       },
     },
     external: {
-      header: 'My Projects',
-      // To hide the `External Projects` section, keep it empty.
+      header: 'Featured Work',
       projects: [
         {
-          title: 'Project Name',
+          title: 'Graph-RAG Hybrid Retrieval',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+            'Knowledge graph + vector search architecture (Neo4j, FAISS, LangChain) with advanced chunking. Built to raise factual accuracy and reduce LLM hallucinations in production workflows.',
           imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80',
+          link: 'https://github.com/samhitharao908',
         },
         {
-          title: 'Project Name',
+          title: 'Mini Orchestrator',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+            'Lightweight multi-agent framework with LangGraph / CrewAI, FastAPI, Redis-backed state, tool calling, Docker, and human-in-the-loop support for reliable LLM agents.',
           imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+          link: 'https://github.com/samhitharao908',
+        },
+        {
+          title: 'GENTUTE',
+          description:
+            'End-to-end NLP pipeline that turns unstructured text into structured JSON and visual tutorials. Published conference paper (INOCON 2023).',
+          imageUrl:
+            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
+          link: 'https://github.com/samhitharao908',
         },
       ],
     },
   },
-  seo: { title: 'Portfolio of Ariful Alam', description: '', imageURL: '' },
+
+  seo: {
+    title: 'N R Samhitha Rao | AI Engineer',
+    description:
+      'AI Engineer specializing in production RAG pipelines, LLM multi-agent systems, and Kubernetes-orchestrated microservices. 3+ years building GenAI platforms at PwC.',
+    imageURL: '',
+  },
+
   social: {
-    linkedin: 'ariful-alam',
-    x: 'arif_szn',
-    mastodon: 'arifszn@mastodon.social',
+    linkedin: 'samhitharaonr',
+    x: '',
+    mastodon: '',
     researchGate: '',
     facebook: '',
     instagram: '',
     reddit: '',
     threads: '',
-    youtube: '', // example: 'pewdiepie'
+    youtube: '',
     udemy: '',
     dribbble: '',
     behance: '',
-    medium: 'arifszn',
-    dev: 'arifszn',
-    stackoverflow: '', // example: '1/jeff-atwood'
+    medium: '',
+    dev: '',
+    stackoverflow: '',
     discord: '',
     telegram: '',
-    website: 'https://www.arifszn.com',
+    website: '',
     phone: '',
-    email: '',
+    email: 'samhitharao908@gmail.com',
   },
+
   resume: {
-    fileUrl:
-      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+    // After you upload Resume.pdf into the repo `public/` folder, use:
+    // fileUrl: 'https://samhitharao908.github.io/portfolio/Resume.pdf',
+    // Leave empty to hide the Download Resume button for now.
+    fileUrl: '',
   },
+
   skills: [
-    'PHP',
-    'Laravel',
-    'JavaScript',
-    'React.js',
-    'Node.js',
-    'Nest.js',
-    'MySQL',
-    'PostgreSQL',
-    'Git',
+    'Python',
+    'RAG Pipelines',
+    'LangChain',
+    'LangGraph',
+    'CrewAI',
+    'Hybrid Retrieval',
+    'FAISS',
+    'OpenSearch',
+    'Pinecone',
+    'Neo4j',
+    'Prompt Engineering',
+    'Guardrails',
+    'LLM Evaluation',
+    'Multi-Agent Systems',
+    'gRPC',
+    'FastAPI',
+    'Kubernetes',
+    'Amazon EKS',
+    'Helm',
     'Docker',
-    'PHPUnit',
-    'CSS',
-    'Antd',
-    'Tailwind',
+    'AWS',
+    'Redis',
+    'SQL',
+    'Azure',
+    'Terraform-ready / IaC curiosity',
   ],
+
   experiences: [
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'September 2021',
+      company: 'PwC',
+      position: 'Senior Associate | AI Engineer (RAG & LLM Integrations)',
+      from: 'July 2023',
       to: 'Present',
-      companyLink: 'https://example.com',
+      companyLink: 'https://www.pwc.com',
     },
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'July 2019',
-      to: 'August 2021',
-      companyLink: 'https://example.com',
+      company: 'PwC',
+      position: 'Data Scientist',
+      from: 'January 2023',
+      to: 'July 2023',
+      companyLink: 'https://www.pwc.com',
     },
-  ],
-  certifications: [
     {
-      name: 'Lorem ipsum',
-      body: 'Lorem ipsum dolor sit amet',
-      year: 'March 2022',
-      link: 'https://example.com',
+      company: 'Basel Practitioners Private Ltd',
+      position: 'Data Analyst',
+      from: 'August 2022',
+      to: 'December 2022',
+      companyLink: '',
     },
   ],
+
+  certifications: [],
+
   educations: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
-    },
-    {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'PES University, Bengaluru',
+      degree: 'B.E. Computer Science (CGPA 8.02)',
+      from: '2019',
+      to: '2023',
     },
   ],
+
   publications: [
     {
-      title: 'Publication Title',
-      conferenceName: '',
-      journalName: 'Journal Name',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    },
-    {
-      title: 'Publication Title',
-      conferenceName: 'Conference Name',
+      title: 'GENTUTE: NLP Pipeline for Text-to-Visual Tutorials',
+      conferenceName: 'INOCON 2023',
       journalName: '',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
+      authors: 'N R Samhitha Rao et al.',
+      link: '',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'End-to-end Python NLP pipeline that converts unstructured text into structured JSON and visual tutorials using custom parsing and synthesis techniques.',
     },
   ],
-  // Display articles from your medium or dev account. (Optional)
+
   blog: {
-    source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
-    limit: 2, // How many articles to display. Max is 10.
+    source: 'dev',
+    username: '', // keep empty until you have a Medium or dev.to
+    limit: 3,
   },
+
   googleAnalytics: {
-    id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
+    id: '',
   },
-  // Track visitor interaction and behavior. https://www.hotjar.com
-  hotjar: { id: '', snippetVersion: 6 },
+
+  hotjar: {
+    id: '',
+    snippetVersion: 6,
+  },
+
   themeConfig: {
-    defaultTheme: 'lofi',
-
-    // Hides the switch in the navbar
-    // Useful if you want to support a single color mode
+    defaultTheme: 'night',
     disableSwitch: false,
-
-    // Should use the prefers-color-scheme media-query,
-    // using user system preferences, instead of the hardcoded defaultTheme
     respectPrefersColorScheme: false,
-
-    // Display the ring in Profile picture
     displayAvatarRing: true,
-
-    // Available themes. To remove any theme, exclude from here.
     themes: [
       'light',
       'dark',
-      'cupcake',
-      'bumblebee',
-      'emerald',
-      'corporate',
-      'synthwave',
-      'retro',
-      'cyberpunk',
-      'valentine',
-      'halloween',
-      'garden',
-      'forest',
-      'aqua',
-      'lofi',
-      'pastel',
-      'fantasy',
-      'wireframe',
-      'black',
-      'luxury',
-      'dracula',
-      'cmyk',
-      'autumn',
-      'business',
-      'acid',
-      'lemonade',
       'night',
-      'coffee',
-      'winter',
+      'business',
+      'corporate',
       'dim',
       'nord',
-      'sunset',
-      'caramellatte',
-      'abyss',
-      'silk',
-      'procyon',
+      'dracula',
+      'lofi',
+      'winter',
     ],
   },
 
-  // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
-      class="text-primary" href="https://github.com/arifszn/gitprofile"
-      target="_blank"
-      rel="noreferrer"
-    >GitProfile</a> and ❤️`,
+  footer:
+    'Built with <a class="text-primary" href="https://github.com/arifszn/gitprofile" target="_blank" rel="noreferrer">GitProfile</a>',
 
   enablePWA: true,
 };
